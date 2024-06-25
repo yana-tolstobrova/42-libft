@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:35:26 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/25 19:09:32 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/06/25 19:36:35 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/06/25 19:41:04 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*memchr(const void *s, int c, size_t n)
 {
-	char	*d;
-	char	*s;
+	char	*src;
 	int	i;
 
-	d = (char *)dest;
-	s = (char *)src;
+	src = (char *)s;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		d[i] = s[i];
+		if (src[i] == c)
+			return (src[i])
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:35:26 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/25 19:09:32 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/06/25 19:15:12 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/06/25 19:32:32 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*d;
-	char	*s;
+	const char	*tmp;
 	int	i;
 
-	d = (char *)dest;
-	s = (char *)src;
 	i = 0;
-	while(i < n)
+	tmp = NULL;
+	while (s[i])
 	{
-		d[i] = s[i];
+		if (s[i] == c)
+			tmp = &s[i];
 		i++;
 	}
-	return (dest);
+	return (tmp);
+}
+
+int	main()
+{
+	{
+		const char	*s = "Alewa";
+		int	c = 'l';
+
+		printf("%s", strrchr(s, c));
+
+	}
+	return 0;
 }

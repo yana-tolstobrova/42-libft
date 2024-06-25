@@ -6,10 +6,20 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 20:08:16 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/24 20:12:32 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/06/25 19:14:41 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
+	int	i;
 
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == s)
+			return s[i];
+		i++;
+	}
+	return (NULL);
+}

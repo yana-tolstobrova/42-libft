@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:35:26 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/25 19:09:32 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/06/25 20:03:27 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/06/25 20:23:58 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*d;
-	char	*s;
 	int	i;
+	int	j;
 
-	d = (char *)dest;
-	s = (char *)src;
 	i = 0;
-	while(i < n)
+	if (little[i] == '\0')
+		return (big);
+	while(big[i] != '\0')
 	{
-		d[i] = s[i];
+		j = 0;
+		while(big[i + j] == little[j] && big[i + j] != '\0' && j < len)
+		{
+			if(little[j + 1] == '\0' || (j + 1) > len)
+				return (&big[i]);
+			j++;
+		}
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

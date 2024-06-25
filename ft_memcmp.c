@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:35:26 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/25 19:09:32 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/06/25 19:41:25 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/06/25 19:48:29 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*d;
-	char	*s;
+	char	*first;
+	char	*second;
 	int	i;
 
-	d = (char *)dest;
-	s = (char *)src;
 	i = 0;
-	while(i < n)
+	first = (char*)s1;
+	second = (char*)s2;
+	while (i < n)
 	{
-		d[i] = s[i];
-		i++;
+		if (first[i] == second[i])
+			i++;
+		else
+			return (first[i] - second[i]);
 	}
-	return (dest);
-}
+	return (0);
+}		
