@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:13:42 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 19:55:36 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/07/10 19:36:41 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/07/10 19:47:11 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *ptr, long unsigned int n)
-{
-	unsigned char	*p;
+#include <stdlib.h>
 
-	p = ptr;
-	while (n > 0 && n--)
-		*p++ = 0;
-}
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	

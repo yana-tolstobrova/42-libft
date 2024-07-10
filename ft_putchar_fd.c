@@ -1,20 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 19:13:42 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 19:55:36 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/07/10 21:20:44 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/07/10 21:21:09 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *ptr, long unsigned int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*p;
-
-	p = ptr;
-	while (n > 0 && n--)
-		*p++ = 0;
 }
