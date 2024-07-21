@@ -57,9 +57,9 @@ char	*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		i;
 	char	*res;
-	int	size;
+	int		size;
 
 	i = 0;
 	size = (ft_strlen(s1) + ft_strlen(s2) + 1);
@@ -68,5 +68,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strcpy(res, s1);
 	ft_strcat(res, s2);
-	return (res):
+	return (res);
 }

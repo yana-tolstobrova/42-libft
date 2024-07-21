@@ -10,17 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(const void *s, int c, size_t n)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*src;
-	int	i;
+	size_t	i;
 
 	src = (char *)s;
 	i = 0;
 	while (i < n)
 	{
 		if (src[i] == c)
-			return (src[i])
+			return (&src[i]);
 		i++;
 	}
 	return (NULL);

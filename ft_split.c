@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	count_size(char *str, char c)
 {
@@ -30,14 +31,14 @@ int	count_size(char *str, char c)
 
 char	*create_str(char *str, char c)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 	char	*res;
 
 	i = 0;
 	len = count_size(str, c);
 	res = malloc(sizeof(char) * (len + 1));
-	if (res = NULL)
+	if (res == NULL)
 		return (NULL);
 	while (i < len)
 	{
@@ -50,8 +51,8 @@ char	*create_str(char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	index;
+	int		i;
+	int		index;
 	char	**arr;
 
 	i = 0;
@@ -67,7 +68,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[index] = create_str(&str[i], c);
 			index++;
-			i+= count_size(&str[i], c);
+			i += count_size(&str[i], c);
 		}
 		while (str[i] && str[i] != c)
 			i++;
@@ -75,19 +76,3 @@ char	**ft_split(char const *s, char c)
 	arr[index] = 0;
 	return (arr);
 }
-
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	int index = 0;
-	char **split;
-	(void) argc;
-	split = ft_split(argv[1], argv[2]);
-	while (split[index])
-	{
-		printf("%s\n", split[index]);
-		index++;
-	}
-}
-

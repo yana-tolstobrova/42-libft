@@ -10,27 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
-{
-	char	*d;
-	char	*s;
-	char	*tmp[n];
-	int	i;
-	int	j;
+#include <stddef.h>
 
-	d = (char *)dest;
-	s = (char *)src;
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;
+
 	i = 0;
-	j = 0;
-	while (i < n)
+	if (!dst && !src && len > 0)
+		return (NULL);
+	if (((unsigned char *)src) >= ((unsigned char *)dst))
 	{
-		tmp[i] = s[i];
-		i++;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	while (j < n)
+	else
 	{
-		d[i] = tmp[i];
-		i++;
+		while (len-- > 0)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
 	}
-	return (dest);
+	return (dst);
 }

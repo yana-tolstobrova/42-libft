@@ -11,11 +11,13 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	int		i;
 	char	*res;
+
 	i = 0;
 	res = malloc(sizeof(char *) * len);
 	if (res == NULL)
@@ -27,4 +29,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 	}
 	return (res);
-}	
+}

@@ -15,28 +15,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*tmp;
-	int	i;
+	char	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = NULL;
 	while (s[i])
 	{
-		if (s[i] == c)
-			tmp = &s[i];
+		if (s[i] == (char)c)
+			tmp = (char *)&s[i];
 		i++;
 	}
 	return (tmp);
-}
-
-int	main()
-{
-	{
-		const char	*s = "Alewa";
-		int	c = 'l';
-
-		printf("%s", strrchr(s, c));
-
-	}
-	return 0;
 }

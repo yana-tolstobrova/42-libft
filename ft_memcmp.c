@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+#include <stddef.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*first;
 	char	*second;
-	int	i;
+	size_t	i;
 
 	i = 0;
-	first = (char*)s1;
-	second = (char*)s2;
+	first = (char *)s1;
+	second = (char *)s2;
 	while (i < n)
 	{
 		if (first[i] == second[i])
@@ -27,4 +29,4 @@ int	memcmp(const void *s1, const void *s2, size_t n)
 			return (first[i] - second[i]);
 	}
 	return (0);
-}		
+}
