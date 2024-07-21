@@ -6,11 +6,12 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:53:25 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/24 19:56:28 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:59:40 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {

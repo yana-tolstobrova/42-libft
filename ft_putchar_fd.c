@@ -6,10 +6,13 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 21:20:44 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 21:21:09 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/21 15:44:52 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar_fd(char c, int fd)
 {
+	write(fd, &c, 1);
 }

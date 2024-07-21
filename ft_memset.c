@@ -6,13 +6,15 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 18:49:35 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/24 20:28:16 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:43:05 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *ptr, int c, unsigned int n)
+#include <stdlib.h>
+
+void	*ft_memset(void *ptr, int c, size_t n)
 {
-	unsigned char	*p;
+	size_t	*p;
 
 	p = ptr;
 	while (n > 0 && n--)

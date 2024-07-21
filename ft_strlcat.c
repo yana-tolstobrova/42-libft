@@ -6,14 +6,16 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:57:25 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/24 19:58:04 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/21 14:42:30 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <stdlib.h>
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = 0;

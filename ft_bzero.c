@@ -6,15 +6,17 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:13:42 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 19:55:36 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:48:28 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *ptr, long unsigned int n)
+#include <stdlib.h>
+
+void	ft_bzero(void *ptr, size_t n)
 {
-	unsigned char	*p;
+	size_t	*p;
 
 	p = ptr;
 	while (n > 0 && n--)
-		*p++ = 0;
+		*p++ = '\0';
 }
