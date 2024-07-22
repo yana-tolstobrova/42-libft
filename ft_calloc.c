@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -24,5 +25,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	dest = (char *)malloc(total);
 	if (dest == NULL)
 		return (NULL);
+	ft_memset(dest, 0, total);
 	return ((void *)dest);
 }

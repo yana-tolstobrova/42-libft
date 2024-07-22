@@ -12,21 +12,31 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	char	*res;
+	unsigned int	i;
+	unsigned int	strlen;
+	char			*res;
 
 	i = 0;
-	res = malloc(sizeof(char *) * len);
+	strlen = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	if (start >= strlen)
+		len = 0;
+	else if (start + len >= strlen)
+		len = strlen - start;
+	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
-	while (start < len && s[start] != '\0')
+	while (i < len)
 	{
 		res[i] = s[start];
 		i++;
 		start++;
 	}
+	res[i] = '\0';
 	return (res);
 }

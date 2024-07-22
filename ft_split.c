@@ -12,8 +12,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-int	count_size(char *str, char c)
+int	count_size(const char *str, char c)
 {
 	int	i;
 	int	size;
@@ -22,21 +23,34 @@ int	count_size(char *str, char c)
 	size = 0;
 	while (str[i] != 0)
 	{
-		if (str[i] != '\0' && str[i] != char c)
+		while (str[i] != '\0' && str[i] != c)
+		{
+			i++;
 			size++;
+		}
 		i++;
 	}
 	return (size);
 }
 
-char	*create_str(char *str, char c)
+int	strseplen(const char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	return (i);
+}
+
+char	*create_str(const char *str, char c)
 {
 	int		len;
 	int		i;
 	char	*res;
 
 	i = 0;
-	len = count_size(str, c);
+	len = strseplen(str, c);
 	res = malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
@@ -57,20 +71,20 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	index = 0;
-	arr = malloc(sizeof(char *) * (count_size(str, c) + 1));
+	arr = malloc(sizeof(char *) * (count_size(s, c) + 1));
 	if (arr == NULL)
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && str[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if (str[i])
+		if (s[i])
 		{
-			arr[index] = create_str(&str[i], c);
+			arr[index] = create_str(&s[i], c);
+			i += strseplen(&s[i], c);
 			index++;
-			i += count_size(&str[i], c);
 		}
-		while (str[i] && str[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	arr[index] = 0;

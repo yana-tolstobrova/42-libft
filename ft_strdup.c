@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
@@ -19,12 +20,10 @@ char	*ft_strdup(const char *src)
 	int		len;
 
 	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-	{
-		len++;
-	}
-	dest = (char *)malloc(len * sizeof(char));
+	len = ft_strlen(src);
+	dest = (char *)malloc(len + 1);
+	if (dest == NULL)
+		return (NULL);
 	while (i < len)
 	{
 		dest[i] = src[i];

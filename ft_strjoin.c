@@ -11,16 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h> 
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {
@@ -36,7 +27,7 @@ char	*ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	j;
@@ -57,11 +48,9 @@ char	*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
 	char	*res;
 	int		size;
 
-	i = 0;
 	size = (ft_strlen(s1) + ft_strlen(s2) + 1);
 	res = malloc(sizeof(char *) * size);
 	if (res == NULL)
