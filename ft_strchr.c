@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*str;
+	char	srch;
 
 	i = 0;
-	while (s[i])
+	str = (char *)s;
+	srch = (char)c;
+	while (str[i] != srch)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+		if (str[i] == '\0')
+			return (0);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	return (str + i);
 }

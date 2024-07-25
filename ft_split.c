@@ -14,26 +14,28 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	count_size(const char *str, char c)
+static int	count_size(const char *str, char c)
 {
 	int	i;
 	int	size;
 
 	i = 0;
 	size = 0;
-	while (str[i] != 0)
+	while (str[i])
 	{
-		while (str[i] != '\0' && str[i] != c)
-		{
+		while (str[i] != '\0' && str[i] == c)
 			i++;
+		if (str[i] && str[i] != c)
+		{
 			size++;
+			while (str[i] && str[i] != c)
+				i++;
 		}
-		i++;
 	}
 	return (size);
 }
 
-int	strseplen(const char *str, char c)
+static int	strseplen(const char *str, char c)
 {
 	int	i;
 
@@ -43,7 +45,7 @@ int	strseplen(const char *str, char c)
 	return (i);
 }
 
-char	*create_str(const char *str, char c)
+static char	*create_str(const char *str, char c)
 {
 	int		len;
 	int		i;
@@ -51,7 +53,7 @@ char	*create_str(const char *str, char c)
 
 	i = 0;
 	len = strseplen(str, c);
-	res = malloc(sizeof(char) * (len + 1));
+	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
 	while (i < len)
@@ -63,6 +65,20 @@ char	*create_str(const char *str, char c)
 	return (res);
 }
 
+static void	*free_mem(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free (arr);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -71,21 +87,21 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	index = 0;
-	arr = malloc(sizeof(char *) * (count_size(s, c) + 1));
+	arr = (char **)malloc(sizeof(char *) * (count_size(s, c) + 1));
 	if (arr == NULL)
 		return (NULL);
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		if (s[i] == c)
 			i++;
-		if (s[i])
+		else
 		{
 			arr[index] = create_str(&s[i], c);
+			if (arr[index] == NULL)
+				return (free_mem(arr));
 			i += strseplen(&s[i], c);
 			index++;
 		}
-		while (s[i] && s[i] != c)
-			i++;
 	}
 	arr[index] = 0;
 	return (arr);

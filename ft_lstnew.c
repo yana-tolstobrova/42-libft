@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 20:27:28 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/06/25 20:49:56 by ytolstob         ###   ########.fr       */
+/*   Created: 2024/07/21 15:48:40 by ytolstob          #+#    #+#             */
+/*   Updated: 2024/07/21 15:53:43 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	char	*dest;
-	int		total;
+	struct s_list	*one;
 
-	if (nmemb == 0 || size == 0)
-		total = 0;
-	else
-		total = nmemb * size;
-	dest = (char *)malloc(total);
-	if (dest == NULL)
+	one = malloc(sizeof(struct s_list));
+	if (!one)
 		return (NULL);
-	ft_memset(dest, 0, total);
-	return ((void *)dest);
+	one->content = content;
+	one->next = NULL;
+	return (one);
 }
