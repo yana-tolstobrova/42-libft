@@ -6,11 +6,11 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:13:42 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/21 13:48:28 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:36:54 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *ptr, size_t n)
 {

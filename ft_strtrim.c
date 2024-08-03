@@ -6,14 +6,13 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:36:41 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 19:47:11 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:34:52 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int	find_set(char c, const char *set)
+static int	find_set(char c, const char *set)
 {
 	int	i;
 
@@ -27,7 +26,7 @@ int	find_set(char c, const char *set)
 	return (0);
 }
 
-int	count_len(const char *str, const char *set)
+static int	count_len(const char *str, const char *set)
 {
 	int		start;
 	int		end;

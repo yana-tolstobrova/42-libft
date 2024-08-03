@@ -6,7 +6,7 @@
 #    By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/24 17:46:43 by ytolstob          #+#    #+#              #
-#    Updated: 2024/06/24 20:26:09 by ytolstob         ###   ########.fr        #
+#    Updated: 2024/07/25 18:39:51 by ytolstob         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ BONUSOBJS = ${BONUSSRCS:.c=.o}
 %.o: %.c
 	${CC} ${CFLAGS} -I ${HDIR} -c $< -o $@
 
-all: ${NAME}
+all: ${NAME} 
 
 ${NAME}: ${OBJS}
 	ar -rcs ${NAME} ${OBJS}

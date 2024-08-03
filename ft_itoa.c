@@ -6,11 +6,10 @@
 /*   By: ytolstob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 21:17:46 by ytolstob          #+#    #+#             */
-/*   Updated: 2024/07/10 21:18:05 by ytolstob         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:31:47 by ytolstob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int	find_len(int n)
